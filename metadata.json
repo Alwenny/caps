@@ -1,0 +1,6 @@
+{
+  "name": "CAPS - Controle Automatizado de Painel Solar",
+  "description": "Scientific documentation, simulation, and hardware telemetry dashboard with Cyberpunk theme for the CAPS project.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
