@@ -207,26 +207,26 @@ export default function App() {
                       <div className="space-y-2 bg-[#0b0c15] p-4 rounded border border-slate-850">
                         <span className="text-[#00f0ff] font-mono font-bold block">// Estrutura de Suporte</span>
                         <p className="text-slate-400 leading-relaxed text-[11px]">
-                          Plataforma leve confeccionada em chapas de acrílico de 3mm cortadas a laser e fixações reforçadas. Apresenta alta estabilidade contra rajadas leves de vento de bancada e permite o movimento suave do eixo de rotação horizontal.
+                          Estrutura de madeira com peças impressas em 3D vinculadas a motor, permitindo estabilidade e a rotação do eixo.
                         </p>
                       </div>
 
                       <div className="space-y-2 bg-[#0b0c15] p-4 rounded border border-slate-850">
                         <span className="text-[#9d00ff] font-mono font-bold block">// Atuação e Transmissão</span>
                         <p className="text-slate-400 leading-relaxed text-[11px]">
-                          Movimentado por um servomotor SG90 acoplado diretamente ao suporte basculante principal. Limites mecânicos de rotação parametrizados em software de 0° a 180° para evitar tracionamento ou rompimento de cabos.
+                          Movimentado por um servomotor MG995 de rotação continua, acoplado diretamente ao suporte basculante principal. Limites mecânicos de rotação parametrizados em software.
                         </p>
                       </div>
 
                       <div className="space-y-2 bg-[#0b0c15] p-4 rounded border border-slate-850">
                         <span className="text-amber-400 font-mono font-bold block">// Sensores Luminosos</span>
                         <p className="text-slate-400 leading-relaxed text-[11px]">
-                          Dois fotoresistors LDR de 5mm instalados em calhas opostas de 90° com anteparo central preto divisor de luz para otimização da leitura diferencial de sombra.
+                          Dois fotorresistores (LDR) de 5mm instalados um de cada lado da placa, em calhas opostas..
                         </p>
                       </div>
 
                       <div className="space-y-2 bg-[#0b0c15] p-4 rounded border border-slate-850">
-                        <span className="text-[#39ff14] font-mono font-bold block">// Micro Mini-Painel Solar</span>
+                        <span className="text-[#39ff14] font-mono font-bold block">// Mini-Painel Solar</span>
                         <p className="text-slate-400 leading-relaxed text-[11px]">
                           Célula fotovoltaica experimental de silício policristalino de 5V 1W acoplada ao topo do suporte móvel para rastrear a eficiência de geração passiva vs. ativa.
                         </p>
@@ -339,7 +339,7 @@ export default function App() {
                     <div className="bg-[#121324] p-4 rounded border border-slate-800">
                       <span className="text-slate-300 font-mono text-xs block mb-1.5 font-bold uppercase">// Descrição do Hardware</span>
                       <p className="text-xs text-slate-400 leading-relaxed">
-                        A estrutura física do rastreador conta com fiação blindada de sinal para comunicação I2C física entre o sensor do acelerômetro GY-01 e o ESP32. Divisores de tensão analógicos bem estruturados fornecem referências sem ruídos nas leituras de posicionamento do painel.
+                        A estrutura física do rastreador conta com fiação blindada de sinal para comunicação I2C física entre o módulo GY-521, que contém o acelerômetro MPU-6050, e o ESP32. Divisores de tensão analógicos bem estruturados fornecem referências com baixo ruído nas leituras de posicionamento do painel.
                       </p>
                     </div>
                   </div>
@@ -376,8 +376,8 @@ export default function App() {
                     {/* Tech item */}
                     <div className="bg-[#0b0c15] border border-slate-800 p-4 rounded space-y-2">
                       <span className="text-[#9d00ff] font-mono text-xs font-bold block">// SENSORES PRINCIPAIS</span>
-                      <h4 className="font-mono text-white text-sm font-bold">LDRs & GY-01 Acelerômetro</h4>
-                      <p className="text-xs text-slate-400">Medem fluxo de irradiação solar nos quadrantes Leste/Oeste e o acelerômetro monitora em graus decimais exatos a inclinação física do painel.</p>
+                      <h4 className="font-mono text-white text-sm font-bold">LDRs & Acelerômetro</h4>
+                      <p className="text-xs text-slate-400">Medem a iluminância nos quadrantes Leste/Oeste e o acelerômetro monitora em graus decimais exatos a inclinação física do painel.</p>
                     </div>
 
                     {/* Tech item */}

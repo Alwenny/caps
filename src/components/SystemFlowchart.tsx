@@ -45,11 +45,8 @@ export function SystemFlowchart() {
               <span>02. SETUP INICIAL DO CONTEXTO</span>
             </div>
             <p className="text-[11px] text-slate-400 font-sans leading-relaxed mb-2">
-              Associa os pinos ADC aos sensores, inicia o PWM do servo a 1500μs (posição neutra), calibra o acelerômetro MPU6050 e conecta à rede local Wi-Fi.
+              Associa os pinos ADC aos sensores, inicia o PWM do servo a 1500μs (posição neutra), configura o acelerômetro MPU6050 e conecta à rede local Wi-Fi.
             </p>
-            <div className="bg-[#05050f] p-2 rounded border border-blue-950 text-[9.5px] font-mono text-blue-300">
-              <code>Serial.begin(115200); motor.attach(10); mpu.begin();</code>
-            </div>
           </div>
 
           <div className="flex justify-center md:col-span-1">
@@ -83,14 +80,14 @@ export function SystemFlowchart() {
             <div className="bg-[#070715] border border-slate-800 p-3 rounded space-y-1.5">
               <span className="text-[10px] font-mono text-blue-400 font-bold uppercase block">// LEITURA LDRs (ADC)</span>
               <p className="text-[11px] text-slate-400 leading-normal">
-                Efetua amostragem analógica de miliVolts nos pinos de leitura leste e oeste para calcular o diferencial luminoso.
+                Efetua amostragem analógica de milivolts nos pinos de leitura leste e oeste para calcular o diferencial luminoso.
               </p>
             </div>
             
             <div className="bg-[#070715] border border-slate-800 p-3 rounded space-y-1.5">
               <span className="text-[10px] font-mono text-teal-400 font-bold uppercase block">// ACELERÔMETRO MPU6050</span>
               <p className="text-[11px] text-slate-400 leading-normal">
-                Mede a tração gravitacional e inercial via protocolo I2C, garantindo que o painel conheça seu ângulo físico instantâneo.
+                Mede a aceleração gravitacional e inercial e transmite os dados via protocolo I2C, garantindo que o painel conheça seu ângulo físico instantâneo.
               </p>
             </div>
 
@@ -117,7 +114,7 @@ export function SystemFlowchart() {
               <span>04. CONTROLE TEMPORAL DA ALÇA</span>
             </div>
             <p className="text-[11px] text-slate-400 leading-relaxed">
-              O firmware executa verificações a cada pulso de 250ms (intervalo regulamentado por software), poupando carga da CPU e tráfego desnecessário de telemetria na rede.
+              O firmware executa verificações a cada pulso de 10 milissegundos (intervalo regulamentado por software), poupando carga da CPU e tráfego desnecessário de telemetria na rede.
             </p>
           </div>
 
@@ -128,7 +125,7 @@ export function SystemFlowchart() {
           <div className="md:col-span-5 bg-[#d84315]/10 border border-orange-900/50 rounded-lg p-3.5 space-y-2">
             <div className="flex items-center gap-2 text-orange-400 font-mono text-xs font-bold">
               <Activity className="w-4 h-4" />
-              <span>05. CONTROLE PID & HISTERESE</span>
+              <span>05. CONTROLE PID</span>
             </div>
             <p className="text-[11px] text-slate-400 leading-relaxed">
               Calcula o erro diferencial de luz entre Leste e Oeste. Injeta na fórmula de correção (Proporcional, Integral, Derivativa) e aplica histerese para evitar micro-oscilações repetitivas ou desgastes mecânicos.
@@ -151,11 +148,8 @@ export function SystemFlowchart() {
               <span>06. ATUAÇÃO DO SERVOMOTOR (PWM)</span>
             </div>
             <p className="text-[11px] text-slate-400 leading-relaxed">
-              Converte as correções matemáticas do filtro PID em comprimento de pulso PWM estável de 50Hz, movendo o servomotor SG90 acoplado para reposicionar as placas faceando o Sol.
+              Converte as correções matemáticas do filtro PID em comprimento de pulso PWM estável de 50Hz, movendo o servomotor MG995 acoplado para reposicionar as placas faceando o Sol.
             </p>
-            <div className="bg-[#05050f] p-2 rounded border border-blue-950/40 text-[9.5px] font-mono text-blue-300">
-              <code>motor.writeMicroseconds(1500 + outputPID);</code>
-            </div>
           </div>
 
           <div className="bg-orange-950/10 border border-orange-950/50 rounded-lg p-4 space-y-2">

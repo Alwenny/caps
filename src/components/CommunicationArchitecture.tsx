@@ -43,7 +43,7 @@ export function CommunicationArchitecture() {
                     <span>SENSORES LUMINOSOS (LDRs)</span>
                   </div>
                   <p className="text-[10px] text-slate-400 font-sans leading-normal">
-                    LDR 1 (Leste - Pino 39) e LDR 2 (Oeste - Pino 34) medem fluxo luminoso em milivolts diretos para focar o Sol.
+                    LDR 1 (Leste - Pino 36) e LDR 2 (Oeste - Pino 39) medem fluxo luminoso em milivolts diretos para focar o Sol.
                   </p>
                 </div>
 
@@ -51,10 +51,10 @@ export function CommunicationArchitecture() {
                 <div className="bg-[#05050e] border border-slate-900 rounded p-2.5 space-y-1">
                   <div className="flex items-center gap-1.5 text-[10px] font-mono text-teal-400 font-bold">
                     <Gauge className="w-3.5 h-3.5" />
-                    <span>SENSORIAL SOLENOIDE EXP.</span>
+                    <span>SENSORIAL PAINEL SOLAR.</span>
                   </div>
                   <p className="text-[10px] text-slate-400 font-sans leading-normal">
-                    Sensor de Tensão (Pino 32) e Sensor de Corrente (Pino 33) coletando de forma experimental os miliWatts gerados.
+                    O ADC (Pino 34) afere a tensão gerada utilizando um divisor de tensão, que é essencial para reduzir a voltagem da placa a níveis suportados pelo ESP32. A corrente é calculada com base nos resistores desse divisor, permitindo coletar de forma experimental os miliwatts gerados.
                   </p>
                 </div>
 
@@ -62,7 +62,7 @@ export function CommunicationArchitecture() {
                 <div className="bg-purple-950/15 border border-purple-900/30 rounded p-2.5 space-y-1.5">
                   <span className="text-[10px] font-mono text-[#a29bfe] font-bold block uppercase">// PROCESSAMENTO LOCAL</span>
                   <p className="text-[10px] text-slate-400 leading-normal">
-                    O microcontrolador ESP32 calcula as rotinas matemáticas PID, suaviza as leituras por média móvel circular e aciona mecanicamente o <strong>Servomotor SG90 (Pino 10)</strong>.
+                    O microcontrolador ESP32 calcula as rotinas matemáticas PID, suaviza as leituras por média móvel circular e aciona mecanicamente o Servomotor MG995 (Pino 25).
                   </p>
                 </div>
               </div>
@@ -124,10 +124,10 @@ export function CommunicationArchitecture() {
                 <div className="bg-[#05050e] border border-slate-900 rounded p-2.5 space-y-1">
                   <div className="flex items-center gap-1.5 text-[10px] font-mono text-purple-300 font-bold">
                     <Server className="w-3.5 h-3.5" />
-                    <span>SERVING PYTHON LOCAL (PORT 5000)</span>
+                    <span>SERVIDOR PYTHON LOCAL (PORT 5000)</span>
                   </div>
                   <p className="text-[10px] text-slate-400 font-sans leading-normal">
-                    Servidor leve Python atuando como Host REST. Escuta e decodifica requisições no endpoint <code>/dados</code>.
+                    Servidor leve Python atuando como Host REST. Escuta e decodifica requisições no endpoint /dados, armazenando-as num banco de dados SQLite.
                   </p>
                 </div>
 
@@ -138,22 +138,8 @@ export function CommunicationArchitecture() {
                     <span>DASHBOARD DE TELEMETRIA</span>
                   </div>
                   <p className="text-[10px] text-slate-400 font-sans leading-normal">
-                    Consolida métricas e renderiza gráficos históricos usando banco de dados SQLite para acompanhamento prático em bancada.
+                    Consolida métricas e renderiza gráficos históricos para acompanhamento prático em bancada.
                   </p>
-                </div>
-
-                {/* Data Example box */}
-                <div className="bg-[#05050d] p-2.5 rounded border border-slate-900 text-[10px] font-mono text-purple-400 space-y-1">
-                  <span className="font-bold uppercase text-[8.5px] select-none block">// EXEMPLO DE PAYLOAD JSON ENVIADO:</span>
-                  <pre className="text-slate-300 leading-tight">
-                    {`{
-  "l_lux": 450.0,
-  "o_lux": 515.0,
-  "v_sol": 1.45,
-  "angulo": 12.5,
-  "status": "ONLINE"
-}`}
-                  </pre>
                 </div>
               </div>
             </div>
