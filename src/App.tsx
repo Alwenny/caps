@@ -439,7 +439,7 @@ export default function App() {
                   <div className="bg-[#121324] border border-dashed border-[#9d00ff]/40 p-5 rounded-lg space-y-3">
                     <span className="font-mono text-xs text-[#9d00ff] font-bold block uppercase tracking-wider">// DIFICULDADES ENCONTRADAS E MELHORIAS EM BANCADA</span>
                     <p className="text-xs text-slate-300 leading-relaxed">
-                      <strong>Infraestrutura de Rede e Quedas do Wi-Fi:</strong> Conseguir criar uma comunicação estável entre o ESP32 e o dashboard de renderização foi o maior desafio prático. Roteadores residenciais apresentavam instabilidade de DHCP. A equipe superou o entrave redirecionando a conectividade para uma rede roteada de smartphone móvel local estável.
+                      <strong>Infraestrutura de Rede e Quedas do Wi-Fi:</strong>Conseguir criar uma comunicação estável entre o ESP32 e o dashboard de renderização foi o maior desafio prático. A tentativa de usar o Raspberry Pi como hotspot apresentou grande instabilidade de rede. A equipe superou o entrave redirecionando a conectividade para uma rede roteada de smartphone móvel local estável.
                     </p>
                     <p className="text-xs text-slate-300 leading-relaxed">
                       <strong>Pivotamento do Servidor (Raspberry Pi vs Computador Local):</strong> O cronograma inicial contemplava embarcar o REST host em um Raspberry Pi autônomo. No entanto, diante de falhas insolúveis de transmissão de dados na placa interna, a arquitetura foi elegantemente adaptada para rodar localmente no PC Desktop conectado de forma móvel. Isso viabilizou todas as comunicações de forma limpa e no tempo correto.
@@ -468,14 +468,14 @@ export default function App() {
                         Durante as validações analógicas dinâmicas realizadas com feixes de iluminação artificial direcionada em bancada, o protótipo do <strong>Controle Automatizado de Painel Solar (CAPS)</strong> alcançou 100% de conformidade de alinhamento diferencial de forma imediata aos estímulos. 
                       </p>
                       <p className="text-xs text-slate-300 leading-relaxed">
-                        Os LDRs enviaram os gradientes resistivos correspondentes ao ADC do ESP32 com extrema fidelidade. A rotina lógica de histerese calculada em C++ evitou micro-ajustes desgastantes e repetitivos, cessando a rotação angular do servomotor sob sincronia exata exatamente no vetor focal geométrico central.
+                        Os LDRs enviaram os gradientes resistivos correspondentes ao ADC do ESP32 com extrema fidelidade. A técnica de multiamostragem implementada em C++ evitou micro-ajustes desgastantes e repetitivos, cessando a rotação angular do servomotor sob sincronia exata exatamente no vetor focal geométrico central.
                       </p>
                     </div>
 
                     <div className="bg-[#0b0c15] border border-slate-800 p-5 rounded-lg space-y-3">
                       <span className="font-mono text-xs text-[#9d00ff] font-bold block uppercase tracking-wider">// RESULTADOS EXPERIMENTAIS</span>
                       <p className="text-xs text-slate-300 leading-relaxed">
-                        As leituras de rotação física do acelerômetro <strong>GY-01</strong> comunicaram-se instantaneamente sob o barramento I2C, gerando leituras decimais de graus de inclinação física precisas e estotadas para transmissão na rede.
+                        As leituras de rotação física do acelerômetro MPU-6050 (módulo GY-521) comunicaram-se instantaneamente sob o barramento I2C, gerando leituras decimais de graus de inclinação física precisas para transmissão na rede.
                       </p>
                     </div>
                   </div>

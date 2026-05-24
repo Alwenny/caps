@@ -81,11 +81,11 @@ export const DEVELOPMENT_STAGES = [
   },
   {
     title: "Etapa 2: Desenho Esquemático & Hardware",
-    desc: "Implementação do esquema eletrônico 'Girassol Elétrico' no KiCad. Soldagem estrutural dos componentes da prototipagem, blindagens dos fios e montagem mecânica do frame giratório."
+    desc: "Implementação do esquema eletrônico 'Controle automatizado de painel solar' no KiCad. Soldagem estrutural dos componentes da prototipagem, blindagens dos fios e montagem mecânica do frame giratório."
   },
   {
     title: "Etapa 3: Firmware & Servidor Local",
-    desc: "Desenvolvimento do firmware C++ embarcado. Criação da lógica de tolerância (histerese) de luz. Programação de um servidor assíncrono em Python com recepção HTTP POST e interface gráfica de dashboard."
+    desc: "Desenvolvimento do firmware C++ embarcado. Programação de um servidor assíncrono em Python com recepção HTTP POST, armazenamento em banco de dados SQLite e interface gráfica de dashboard."
   },
   {
     title: "Etapa 4: Validação & Ensaios em Bancada",

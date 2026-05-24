@@ -128,10 +128,9 @@ export function SystemFlowchart() {
               <span>05. CONTROLE PID</span>
             </div>
             <p className="text-[11px] text-slate-400 leading-relaxed">
-              Calcula o erro diferencial de luz entre Leste e Oeste. Injeta na fórmula de correção (Proporcional, Integral, Derivativa) e aplica histerese para evitar micro-oscilações repetitivas ou desgastes mecânicos.
+              Calcula o erro diferencial de luz entre Leste e Oeste. Injeta na fórmula de correção (Proporcional, Integral, Derivativa) e utiliza técnica de multiamostragem para evitar micro-oscilações repetitivas ou desgastes mecânicos.
             </p>
           </div>
-
         </div>
 
         {/* Connector row 3 */}
@@ -161,9 +160,7 @@ export function SystemFlowchart() {
               Empacota as métricas de geração solar lidas, a indicação angular e as tensões médias em strings estruturadas em JSON. Despacha via HTTP POST a cada 2000 milissegundos de forma assíncrona para o servidor local Python.
             </p>
           </div>
-
         </div>
-
       </div>
 
       <div className="mt-5 pt-3.5 border-t border-slate-900/80 flex items-center justify-center gap-1.5 text-[9.5px] text-slate-500 font-mono uppercase text-center">
