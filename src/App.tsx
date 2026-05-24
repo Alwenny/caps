@@ -23,6 +23,7 @@ import {
 import { TEAM_MEMBERS, REQUIRED_VIDEOS, DEVELOPMENT_STAGES } from "./data";
 import { ExternalImage } from "./components/ExternalImage";
 import { SystemFlowchart } from "./components/SystemFlowchart";
+import { CommunicationArchitecture } from "./components/CommunicationArchitecture";
 
 export default function App() {
   const [currentSection, setCurrentSection] = useState<string>("home");
@@ -181,7 +182,7 @@ export default function App() {
                 <div id="section-home" className="space-y-6">
                   
                   {/* Banner header */}
-                  <div className="relative h-44 rounded-lg bg-cover bg-center overflow-hidden border border-[#00f0ff]/40 flex flex-col justify-end p-5" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=80')" }}>
+                  <div className="relative h-44 rounded-lg bg-cover bg-center overflow-hidden border border-[#00f0ff]/40 flex flex-col justify-end p-5" style={{ backgroundImage: "url('https://i.ibb.co/7dFvwBcN/IMG-20260523-WA0019.jpg')" }}>
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-slate-950/60 to-transparent pointer-events-none" />
                     <div className="relative z-10 space-y-1">
                       <span className="text-[10px] font-mono text-[#00f0ff] uppercase tracking-wider bg-[#00f0ff]/10 py-0.5 px-2 rounded border border-[#00f0ff]/40">PROTÓTIPO EXPERIMENTAL</span>
@@ -232,6 +233,14 @@ export default function App() {
                       </div>
                     </div>
                   </div>
+
+                  {/* Imagem do Protótipo na Página Inicial */}
+                  <ExternalImage 
+                    imageUrl="https://i.ibb.co/7dFvwBcN/IMG-20260523-WA0019.jpg"
+                    alt="Protótipo Físico CAPS - Visão Completa"
+                    landingUrl="https://ibb.co/q3wBthGF"
+                    title="// REGISTRO COMPLETO DO PROTÓTIPO"
+                  />
 
                   {/* Team Members Section */}
                   <div className="space-y-4">
@@ -337,6 +346,9 @@ export default function App() {
 
                   {/* Flowchart Component Block */}
                   <SystemFlowchart />
+
+                  {/* Communication Architecture Component Block */}
+                  <CommunicationArchitecture />
 
                 </div>
               )}
@@ -475,6 +487,22 @@ export default function App() {
                     landingUrl="https://ibb.co/cSkr53GT"
                     title="// PAINEL DE TELEMETRIA DO SISTEMA"
                   />
+
+                  {/* Registros do Protótipo Real */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <ExternalImage 
+                      imageUrl="https://i.ibb.co/7dFvwBcN/IMG-20260523-WA0019.jpg"
+                      alt="Protótipo Físico CAPS"
+                      landingUrl="https://ibb.co/q3wBthGF"
+                      title="// REGISTRO COMPLETO DO PROTÓTIPO"
+                    />
+                    <ExternalImage 
+                      imageUrl="https://i.ibb.co/fVw7wPqg/IMG-20260523-WA0016.jpg"
+                      alt="Protótipo CAPS em Funcionamento"
+                      landingUrl="https://ibb.co/SDCpC95j"
+                      title="// PROTÓTIPO ATIVO EM BANCADA"
+                    />
+                  </div>
 
 
 
