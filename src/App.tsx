@@ -200,32 +200,32 @@ export default function App() {
                   </div>
 
                   {/* Physical Prototype Specifications Card */}
-                  <div className="bg-[#040409] border border-slate-800 rounded-lg p-5 space-y-4">
+                  <div className="bg-[#040409] border border-slate-800 rounded-lg p-4 sm:p-4.5 space-y-3">
                     <span className="font-mono text-xs text-slate-300 uppercase tracking-wider block font-bold">// ESPECIFICAÇÕES FÍSICAS & ARRANJO MECÂNICO DO PROTÓTIPO</span>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-sans">
-                      <div className="space-y-2 bg-[#0b0c15] p-4 rounded border border-slate-850">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-sans items-start">
+                      <div className="space-y-1 bg-[#0b0c15] p-3 sm:p-3.5 rounded border border-slate-850">
                         <span className="text-[#00f0ff] font-mono font-bold block">// Estrutura de Suporte</span>
                         <p className="text-slate-400 leading-relaxed text-[11px]">
                           Estrutura de madeira com peças impressas em 3D vinculadas a motor, permitindo estabilidade e a rotação do eixo.
                         </p>
                       </div>
 
-                      <div className="space-y-2 bg-[#0b0c15] p-4 rounded border border-slate-850">
+                      <div className="space-y-1 bg-[#0b0c15] p-3 sm:p-3.5 rounded border border-slate-850">
                         <span className="text-[#9d00ff] font-mono font-bold block">// Atuação e Transmissão</span>
                         <p className="text-slate-400 leading-relaxed text-[11px]">
                           Movimentado por um servomotor MG995 de rotação continua, acoplado diretamente ao suporte basculante principal. Limites mecânicos de rotação parametrizados em software.
                         </p>
                       </div>
 
-                      <div className="space-y-2 bg-[#0b0c15] p-4 rounded border border-slate-850">
+                      <div className="space-y-1 bg-[#0b0c15] p-3 sm:p-3.5 rounded border border-slate-850">
                         <span className="text-amber-400 font-mono font-bold block">// Sensores Luminosos</span>
                         <p className="text-slate-400 leading-relaxed text-[11px]">
-                          Dois fotorresistores (LDR) de 5mm instalados um de cada lado da placa, em calhas opostas..
+                          Dois fotorresistores (LDR) de 5mm instalados um de cada lado da placa, em calhas opostas.
                         </p>
                       </div>
 
-                      <div className="space-y-2 bg-[#0b0c15] p-4 rounded border border-slate-850">
+                      <div className="space-y-1 bg-[#0b0c15] p-3 sm:p-3.5 rounded border border-slate-850">
                         <span className="text-[#39ff14] font-mono font-bold block">// Mini-Painel Solar</span>
                         <p className="text-slate-400 leading-relaxed text-[11px]">
                           Célula fotovoltaica experimental de silício policristalino de 5V 1W acoplada ao topo do suporte móvel para rastrear a eficiência de geração passiva vs. ativa.
@@ -234,26 +234,50 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Imagem do Protótipo na Página Inicial */}
-                  <ExternalImage 
-                    imageUrl="https://i.ibb.co/7dFvwBcN/IMG-20260523-WA0019.jpg"
-                    alt="Protótipo Físico CAPS - Visão Completa"
-                    landingUrl="https://ibb.co/q3wBthGF"
-                    title="// REGISTRO COMPLETO DO PROTÓTIPO"
-                  />
-
-                  {/* Team Members Section */}
-                  <div className="space-y-4">
-                    <div className="border-b border-slate-800 pb-2">
-                      <h3 className="font-mono text-xs text-slate-400 uppercase tracking-wider font-bold">INTEGRANTES DO GRUPO</h3>
+                  {/* Imagem do Protótipo e Integrantes Lado a Lado */}
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+                    {/* Imagem do Protótipo na Página Inicial */}
+                    <div className="lg:col-span-8 flex flex-col justify-between">
+                      <ExternalImage 
+                        imageUrl="https://i.ibb.co/7dFvwBcN/IMG-20260523-WA0019.jpg"
+                        alt="Protótipo Físico CAPS - Visão Completa"
+                        landingUrl="https://ibb.co/q3wBthGF"
+                        title="// REGISTRO COMPLETO DO PROTÓTIPO"
+                        className="h-full"
+                      />
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                      {TEAM_MEMBERS.map((member) => (
-                        <div key={member.id} className="bg-[#0b0c15] border border-slate-800 rounded px-4 py-3 hover:border-[#9d00ff]/40 transition-all text-center flex items-center justify-center">
-                          <h4 className="font-mono text-xs text-slate-200 font-bold tracking-tight">{member.name}</h4>
+                    {/* Team Members Section */}
+                    <div className="lg:col-span-4 bg-[#05050e]/95 border border-slate-800 rounded-lg p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden">
+                      <div className="absolute inset-0 cyber-panel-grid opacity-5 pointer-events-none" />
+                      <div className="relative z-10">
+                        <div className="flex items-center gap-1.5 border-b border-slate-800 pb-2 mb-4">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#9d00ff] animate-pulse" />
+                          <h3 className="font-mono text-xs text-slate-300 uppercase tracking-widest font-bold">// INTEGRANTES</h3>
                         </div>
-                      ))}
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5">
+                          {TEAM_MEMBERS.map((member) => (
+                            <div 
+                              key={member.id} 
+                              className="bg-[#0b0c15] border border-slate-850 rounded p-3 hover:border-[#9d00ff]/30 hover:bg-[#9d00ff]/5 transition-all flex flex-col justify-center min-h-[52px]"
+                            >
+                              <h4 className="font-mono text-[11px] text-slate-200 font-bold leading-tight">
+                                {member.name}
+                              </h4>
+                              <div className="flex items-center justify-between mt-1">
+                                <span className="text-[10px] font-mono text-slate-500 font-medium">
+                                  {member.role}
+                                </span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="mt-4 pt-3 border-t border-slate-800 flex items-center justify-center text-[9px] font-mono text-slate-500 relative z-10 text-center">
+                        <span>GRUPO CAPS - PROJETO INTEGRADOR</span>
+                      </div>
                     </div>
                   </div>
 
@@ -364,46 +388,46 @@ export default function App() {
                     <Cpu className="w-5 h-5 text-[#00f0ff]" />
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 items-start">
                     
                     {/* Tech item */}
-                    <div className="bg-[#0b0c15] border border-slate-800 p-4 rounded space-y-2">
-                      <span className="text-[#00f0ff] font-mono text-xs font-bold block">// MICROCONTROLADOR</span>
+                    <div className="bg-[#0b0c15] border border-slate-800 p-3 sm:p-3.5 rounded space-y-1.5 animate-fade-in">
+                      <span className="text-[#00f0ff] font-mono text-[10px] sm:text-xs font-bold block">// MICROCONTROLADOR</span>
                       <h4 className="font-mono text-white text-sm font-bold">ESP32 (WROOM-32D)</h4>
                       <p className="text-xs text-slate-400">Responsável pelo processamento lógico geral, conversão linear ADC rápida, gerenciamento Wi-Fi e geração de PWM de 50Hz para os motores.</p>
                     </div>
 
                     {/* Tech item */}
-                    <div className="bg-[#0b0c15] border border-slate-800 p-4 rounded space-y-2">
-                      <span className="text-[#9d00ff] font-mono text-xs font-bold block">// SENSORES PRINCIPAIS</span>
+                    <div className="bg-[#0b0c15] border border-slate-800 p-3 sm:p-3.5 rounded space-y-1.5 animate-fade-in">
+                      <span className="text-[#9d00ff] font-mono text-[10px] sm:text-xs font-bold block">// SENSORES PRINCIPAIS</span>
                       <h4 className="font-mono text-white text-sm font-bold">LDRs & Acelerômetro</h4>
                       <p className="text-xs text-slate-400">Medem a iluminância nos quadrantes Leste/Oeste e o acelerômetro monitora em graus decimais exatos a inclinação física do painel.</p>
                     </div>
 
                     {/* Tech item */}
-                    <div className="bg-[#0b0c15] border border-slate-800 p-4 rounded space-y-2">
-                      <span className="text-[#fefe00] font-mono text-xs font-bold block">// ATUADORES DE FORÇA</span>
+                    <div className="bg-[#0b0c15] border border-slate-800 p-3 sm:p-3.5 rounded space-y-1.5 animate-fade-in">
+                      <span className="text-[#fefe00] font-mono text-[10px] sm:text-xs font-bold block">// ATUADORES DE FORÇA</span>
                       <h4 className="font-mono text-white text-sm font-bold">Servomotor de Rotação</h4>
                       <p className="text-xs text-slate-400">Atuador físico acoplado a engrenagem longitudinal para girar o painel levemente de forma constante até zerar os erros de incidência solar.</p>
                     </div>
 
                     {/* Tech item */}
-                    <div className="bg-[#0b0c15] border border-slate-800 p-4 rounded space-y-2">
-                      <span className="text-[#39ff14] font-mono text-xs font-bold block">// PROTOCOLOS DE COMUNICAÇÃO</span>
+                    <div className="bg-[#0b0c15] border border-slate-800 p-3 sm:p-3.5 rounded space-y-1.5 animate-fade-in">
+                      <span className="text-[#39ff14] font-mono text-[10px] sm:text-xs font-bold block">// PROTOCOLOS DE COMUNICAÇÃO</span>
                       <h4 className="font-mono text-white text-sm font-bold">HTTP (LAN) & I2C</h4>
                       <p className="text-xs text-slate-400">O microcontrolador conversa com o acelerômetro via I2C físico no barramento SDA/SCL, e envia os pacotes usando requisições JSON HTTP Client.</p>
                     </div>
 
                     {/* Tech item */}
-                    <div className="bg-[#0b0c15] border border-slate-800 p-4 rounded space-y-2">
-                      <span className="text-[#9d00ff] font-mono text-xs font-bold block">// LINGUAGENS DO ECOSSISTEMA</span>
+                    <div className="bg-[#0b0c15] border border-slate-800 p-3 sm:p-3.5 rounded space-y-1.5 animate-fade-in">
+                      <span className="text-[#9d00ff] font-mono text-[10px] sm:text-xs font-bold block">// LINGUAGENS DO ECOSSISTEMA</span>
                       <h4 className="font-mono text-white text-sm font-bold">C++ & Python Core</h4>
                       <p className="text-xs text-slate-400">C++ estruturado embarcado no ESP32 usando o framework Arduino IDE, e Python no backend Express/REST do Dashboard local.</p>
                     </div>
 
                     {/* Tech item */}
-                    <div className="bg-[#0b0c15] border border-slate-800 p-4 rounded space-y-2">
-                      <span className="text-slate-400 font-mono text-xs font-bold block">// INFRAESTRUTURA IOT</span>
+                    <div className="bg-[#0b0c15] border border-slate-800 p-3 sm:p-3.5 rounded space-y-1.5 animate-fade-in">
+                      <span className="text-slate-400 font-mono text-[10px] sm:text-xs font-bold block">// INFRAESTRUTURA IOT</span>
                       <h4 className="font-mono text-white text-sm font-bold">Servidor Local Desktop</h4>
                       <p className="text-xs text-slate-400">Ambiente de servidor REST customizado e fechado na rede interna local, o que garante imunidade contra oscilações de roteamento externo na nuvem.</p>
                     </div>
@@ -489,20 +513,12 @@ export default function App() {
                   />
 
                   {/* Registros do Protótipo Real */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <ExternalImage 
-                      imageUrl="https://i.ibb.co/7dFvwBcN/IMG-20260523-WA0019.jpg"
-                      alt="Protótipo Físico CAPS"
-                      landingUrl="https://ibb.co/q3wBthGF"
-                      title="// REGISTRO COMPLETO DO PROTÓTIPO"
-                    />
-                    <ExternalImage 
-                      imageUrl="https://i.ibb.co/fVw7wPqg/IMG-20260523-WA0016.jpg"
-                      alt="Protótipo CAPS em Funcionamento"
-                      landingUrl="https://ibb.co/SDCpC95j"
-                      title="// PROTÓTIPO ATIVO EM BANCADA"
-                    />
-                  </div>
+                  <ExternalImage 
+                    imageUrl="https://i.ibb.co/fVw7wPqg/IMG-20260523-WA0016.jpg"
+                    alt="Protótipo CAPS em Funcionamento"
+                    landingUrl="https://ibb.co/SDCpC95j"
+                    title="// PROTÓTIPO ATIVO EM BANCADA"
+                  />
 
 
 

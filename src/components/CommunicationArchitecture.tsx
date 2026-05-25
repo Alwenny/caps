@@ -23,10 +23,10 @@ export function CommunicationArchitecture() {
       <div className="space-y-6">
 
         {/* 3-Section Visual Blocks representing the flow */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
 
           {/* BLOCK 1: ESP32 PROTOTYPE */}
-          <div className="border border-purple-900/40 bg-black/45 rounded-xl p-4 flex flex-col justify-between space-y-4">
+          <div className="border border-purple-900/40 bg-black/45 rounded-xl p-4 flex flex-col justify-start space-y-3.5">
             <div>
               <div className="flex items-center gap-2 border-b border-purple-950 pb-2 mb-3">
                 <Cpu className="w-4 h-4 text-purple-400" />
@@ -81,13 +81,13 @@ export function CommunicationArchitecture() {
               <ArrowRight className="w-7 h-7" />
             </div>
 
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-5 text-center space-y-3.5 relative w-full max-w-sm">
+            <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 text-center space-y-3 relative w-full max-w-sm">
               <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-1.5 py-0.5 bg-slate-950 border border-slate-800 rounded font-mono text-[9px] text-purple-400 font-bold">
                 ENLACE SEM FIO
               </span>
 
-              <div className="w-12 h-12 bg-[#a29bfe]/10 rounded-full flex items-center justify-center mx-auto border border-[#a29bfe]/30">
-                <Radio className="w-6 h-6 text-[#a29bfe] animate-pulse" />
+              <div className="w-10 h-10 bg-[#a29bfe]/10 rounded-full flex items-center justify-center mx-auto border border-[#a29bfe]/30">
+                <Radio className="w-5 h-5 text-[#a29bfe] animate-pulse" />
               </div>
 
               <div>
@@ -110,7 +110,7 @@ export function CommunicationArchitecture() {
           </div>
 
           {/* BLOCK 3: LOCAL HOST & SERVER */}
-          <div className="border border-[#6c5ce7]/40 bg-black/45 rounded-xl p-4 flex flex-col justify-between space-y-4">
+          <div className="border border-[#6c5ce7]/40 bg-black/45 rounded-xl p-4 flex flex-col justify-start space-y-3.5">
             <div>
               <div className="flex items-center gap-2 border-b border-[#6c5ce7]/30 pb-2 mb-3">
                 <Server className="w-4 h-4 text-[#a29bfe]" />

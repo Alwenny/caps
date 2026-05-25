@@ -25,8 +25,8 @@ export function SystemFlowchart() {
         
         {/* Step 1: Boot e Setup */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-          <div className="md:col-span-3 bg-slate-900/60 border border-slate-800 rounded-lg p-3.5 flex flex-col justify-between h-full">
-            <div className="flex items-center gap-2 mb-2 text-slate-300 font-mono text-xs font-bold">
+          <div className="md:col-span-3 bg-slate-900/60 border border-slate-800 rounded-lg p-3 flex flex-col">
+            <div className="flex items-center gap-2 mb-1.5 text-slate-300 font-mono text-xs font-bold">
               <PlayCircle className="w-4 h-4 text-[#00f0ff]" />
               <span>01. BOOT</span>
             </div>
@@ -39,12 +39,12 @@ export function SystemFlowchart() {
             <ArrowRight className="w-5 h-5 text-[#9d00ff] rotate-90 md:rotate-0" />
           </div>
 
-          <div className="md:col-span-5 bg-[#0d47a1]/10 border border-blue-900/50 rounded-lg p-3.5 flex flex-col justify-between h-full">
-            <div className="flex items-center gap-2 mb-2 text-blue-400 font-mono text-xs font-bold">
+          <div className="md:col-span-5 bg-[#0d47a1]/10 border border-blue-900/50 rounded-lg p-3 flex flex-col">
+            <div className="flex items-center gap-2 mb-1.5 text-blue-400 font-mono text-xs font-bold">
               <Settings className="w-4 h-4" />
               <span>02. SETUP INICIAL DO CONTEXTO</span>
             </div>
-            <p className="text-[11px] text-slate-400 font-sans leading-relaxed mb-2">
+            <p className="text-[11px] text-slate-400 font-sans leading-relaxed">
               Associa os pinos ADC aos sensores, inicia o PWM do servo a 1500μs (posição neutra), configura o acelerômetro MPU6050 e conecta à rede local Wi-Fi.
             </p>
           </div>
@@ -53,7 +53,7 @@ export function SystemFlowchart() {
             <ArrowRight className="w-5 h-5 text-[#9d00ff] rotate-90 md:rotate-0" />
           </div>
 
-          <div className="md:col-span-2 bg-red-950/20 border border-red-900/50 rounded-lg p-3.5 flex flex-col justify-center h-full">
+          <div className="md:col-span-2 bg-red-950/20 border border-red-900/50 rounded-lg p-3 flex flex-col">
             <div className="flex items-center gap-2 mb-1.5 text-red-400 font-mono font-bold text-[10px]">
               <AlertTriangle className="w-3.5 h-3.5" />
               <span>HALT POR SEGURANÇA</span>
