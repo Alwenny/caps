@@ -54,7 +54,7 @@ export function CommunicationArchitecture() {
                     <span>SENSORIAL PAINEL SOLAR.</span>
                   </div>
                   <p className="text-[10px] text-slate-400 font-sans leading-normal">
-                    O ADC (Pino 34) afere a tensão gerada utilizando um divisor de tensão, que é essencial para reduzir a voltagem da placa a níveis suportados pelo ESP32. A corrente é calculada com base nos resistores desse divisor, permitindo coletar de forma experimental os miliwatts gerados.
+                    O ADC (Pino 34) afere a tensão gerada utilizando um divisor de tensão, que é essencial para reduzir a tensão da placa a níveis suportados pelo ESP32. A corrente é calculada com base nos resistores desse divisor, permitindo coletar de forma experimental os miliwatts gerados.
                   </p>
                 </div>
 

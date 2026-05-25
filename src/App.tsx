@@ -513,10 +513,10 @@ export default function App() {
                       <strong>Ausência de Medição de Geração Líquida Real:</strong> Nas condições experimentais atuais, o protótipo não foi submetido a testes de carga integrados em condições reais de incidência de luz solar por períodos longos sustentados (como ciclos contínuos de 12 horas).
                     </p>
                     <p className="text-xs text-slate-300 leading-relaxed">
-                      Também não foi implementado um shunt de corrente para avaliar o custo energético consumido pela eletrônica embarcada (ESP32 de 240MHz, barramentos de conexões e atuador mecânico) e descontá-lo da receita de Wh extra captados pelo painel dinâmico móvel.
+                      Também não foi implementado um shunt de corrente para avaliar o custo energético consumido pela eletrônica embarcada (ESP32 de 240MHz, barramentos de conexões e atuador mecânico) e descontá-lo da receita de energia extra captada pelo painel dinâmico móvel.
                     </p>
                     <p className="text-xs text-slate-300 leading-relaxed">
-                      <strong>Instabilidade sob Alta Radiação Solar (Calibração de Luz):</strong> Durante os testes de campo com incidência de luz solar real e direta, foi constatada uma certa instabilidade de oscilação em direção ao final do ensaio. Esse comportamento é justificado pelo fato de o controlador ter sido calibrado originalmente para fontes de luz artificial de intensidade menos intensa em bancada. Sob forte radiação solar direta, a alta saturação dos sensores LDR alterou os valores de sensibilidade diferencial, gerando leves flutuações pontuais de correção que necessitam de adaptação no algoritmo de histerese do firmware para ambientes externos de alta insolação.
+                      <strong>Instabilidade sob Alta Radiação Solar (Calibração de Luz):</strong>Durante os testes de campo com incidência de luz solar real e direta, foi constatada uma certa instabilidade e oscilação em direção ao final do ensaio. Esse comportamento é justificado pelo fato de o controlador ter sido calibrado originalmente para fontes de luz artificial de menor intensidade em bancada. Sob forte radiação solar direta, a alta saturação dos sensores LDR alterou os valores de sensibilidade diferencial, gerando leves flutuações pontuais de correção que necessitam de adaptação no algoritmo de controle do firmware para ambientes externos de alta insolação.
                     </p>
                   </div>
 
